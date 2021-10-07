@@ -7,8 +7,8 @@ namespace CitiesServer.Entities
 {
     public class City
     {
-        public string Name { get; set; }
-        public string Country { get; set; }
-        public string SubCountry { get; set; }
+        public string name { get; set; }
+        public string country { get; set; }
+        public string subcountry { get; set; }
     }
 }

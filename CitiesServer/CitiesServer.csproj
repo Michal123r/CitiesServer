@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <PackageReference Include="CsvHelper" Version="27.1.1" />
+    <PackageReference Include="GenericParsing" Version="1.2.2" />
+    <PackageReference Include="LumenWorksCsvReader" Version="4.0.0" />
   </ItemGroup>
 
 
