@@ -10,6 +10,7 @@ using System.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
 using CitiesServer.DAL;
+using Microsoft.AspNetCore.Cors;
 
 namespace CitiesServer.Controllers
 {
@@ -28,7 +29,7 @@ namespace CitiesServer.Controllers
         {
             _logger = logger;
         }
-
+        [EnableCors]
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
