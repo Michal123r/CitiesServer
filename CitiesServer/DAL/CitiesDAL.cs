@@ -14,10 +14,10 @@ namespace CitiesServer.DAL
 {
     public static class CitiesDAL
     {
-        public static List<City> AllCities;
-        public static List<City> GetData()
+        public static List<string> AllCities;
+        public static List<string> GetData()
         {
-            List<City> allCities = new List<City>();
+            List<string> allCities = new List<string>();
             using var streamReader = File.OpenText(@"DATA\\world-cities_csv.csv");
             using var csvReader = new CsvReader(streamReader, CultureInfo.CurrentCulture);
 
@@ -25,7 +25,7 @@ namespace CitiesServer.DAL
 
             foreach (var city in cities.ToArray())
             {
-                allCities.Add(new City { name = city.name });
+                allCities.Add(city.name);
 
             }
 

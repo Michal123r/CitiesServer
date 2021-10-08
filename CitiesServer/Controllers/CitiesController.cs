@@ -19,11 +19,6 @@ namespace CitiesServer.Controllers
     [Route("[controller]")]
     public class CitiesController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<CitiesController> _logger;
 
         public CitiesController(ILogger<CitiesController> logger)
@@ -32,19 +27,12 @@ namespace CitiesServer.Controllers
         }
         [EnableCors]
         [HttpGet]
-        public IEnumerable<City> Get()
+        public IEnumerable<string> Get()
         {
-            List<City> allCities;
+            List<string> allCities;
             allCities = CitiesDAL.AllCities == null ? CitiesDAL.GetData() : CitiesDAL.AllCities;
             return allCities.ToArray();
-            //var rng = new Random();
-            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            //{
-            //    Date = DateTime.Now.AddDays(index),
-            //    TemperatureC = rng.Next(-20, 55),
-            //    Summary = Summaries[rng.Next(Summaries.Length)]
-            //})
-            //.ToArray();
+           
         }
     }
 }
